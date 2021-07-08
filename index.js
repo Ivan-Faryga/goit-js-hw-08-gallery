@@ -11,15 +11,9 @@ let activeIndex = null;
 
 // ======================== Step 1 - converting incoming data into Markup ==============================
 
-// //получаю доступ к родителю галереи:
-
-// const gallery = document.querySelector(".js-gallery");
-
 // переменная для функции создающей разметку:
 
 const imgCardsMarkup = createImgGalleryMarkup(galleryItems);
-
-refs.gallery.insertAdjacentHTML("beforeend", imgCardsMarkup.join(""));
 
 // функция, которая преображает входящий массив объектов в разметку:
 
@@ -40,6 +34,8 @@ function createImgGalleryMarkup(galleryItems) {
             </li>`;
   });
 }
+
+refs.gallery.insertAdjacentHTML("beforeend", imgCardsMarkup.join(""));
 
 // ================================ Step 2 - open && close modal =======================================================
 
@@ -70,6 +66,9 @@ function onGalleryClick(event) {
 //   refs.modal.classList.remove("is-open");
 //   refs.modalImg.src = "#";
 // }
+
+refs.modal.addEventListener("click", closeModal);
+
 function closeModal() {
   refs.modal.classList.remove("is-open");
   refs.modalImg.src = "";
@@ -77,7 +76,6 @@ function closeModal() {
   window.removeEventListener("keyup", keyboardManipulation);
 }
 
-refs.modal.addEventListener("click", closeModal);
 // window.addEventListener("keydown", (event) => {
 //   if (event.key === "Escape") {
 //     closeModal(event);
