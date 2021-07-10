@@ -65,9 +65,9 @@ const galleryItems = [
   //===============================================================================
   {
     preview:
-      "https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg",
+      "https://pixabay.com/get/gb128040011610a30afe61902aa32412a01cea89a68f479710eaae585e02cf996887bb5ea10ad055d420be06a19e2856d_640.jpg",
     original:
-      "https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg",
+      "https://pixabay.com/get/g4cd8772e8a26f3ece2caf511357976b70eae586dfe42f57128206d2d420cd886917570fd4ca9ac350664907ee84410ed_1280.jpg",
     description: "Hokkaido Flower",
   },
   {
