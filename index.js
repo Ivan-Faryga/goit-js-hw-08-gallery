@@ -27,7 +27,7 @@ function createImgGalleryMarkup(galleryItems) {
                 <img
                     class="gallery__image"
                     loading ="lazy"
-                    src="${galleryItem.preview}"
+                    data-src="${galleryItem.preview}"
                     data-source="${galleryItem.original}"
                     alt="${galleryItem.description}"
                     />
@@ -111,3 +111,28 @@ function keyboardManipulation(e) {
       alert("что-то пошло не так");
   }
 }
+
+//===================================== Step- 4 - Lazy-Load ========================================================
+
+// finding all img's on the page
+
+const allImgRef = document.querySelectorAll("img");
+
+const options = {
+  rootMargin: "50px",
+  threshold: 0.5,
+};
+
+const onEntry = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && !entry.target.src) {
+      entry.target.src = entry.target.dataset.src;
+    }
+  });
+};
+
+allImgRef.forEach((img) => {
+  const observer = new IntersectionObserver(onEntry, options);
+
+  observer.observe(img);
+});
